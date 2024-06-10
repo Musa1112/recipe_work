@@ -28,7 +28,7 @@ import { format } from '@fast-csv/format';
                     const location = product.querySelector(".wp-block-content.clearfix.text-xs-left.text-sm-left .voffset-bottom-10")?.textContent.trim() || '';
 
                     const newPandC = phoneAndCompany.replace(/\n+/g, '\n').split("\n").map((item) => item.trim());
-                    const phoneContact = newPandC.length > 1 ? newPandC[1] : '';
+                    const phoneContact = JSON.stringify(newPandC.length > 1 ? newPandC[1] : '').trim();
                     const companyName = newPandC[0] || '';
 
                     return { title, price,  phoneContact, companyName, location, imageLink };
